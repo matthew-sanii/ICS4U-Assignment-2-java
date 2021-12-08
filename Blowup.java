@@ -61,7 +61,7 @@ final class Blowup {
             catch (NumberFormatException errorCode) {
                 multiplied = 0;
             }
-            result = blowup(str.substring(1), multiplied) + results;
+            result = results + blowup(str.substring(1), multiplied);
         }
         return result;
     }
