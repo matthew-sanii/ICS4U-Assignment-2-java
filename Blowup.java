@@ -51,15 +51,16 @@ final class Blowup {
         }
         else {
             final char spot = str.charAt(0);
+            final int info = Character.getNumericValue(spot);
+            if (info > 9) {
+              multiplied = 0;
+            }
+            else {
+              multiplied = info;
+            }
             while (copies != 0) {
                 results += spot;
                 copies -= 1;
-            }
-            try {
-                multiplied = Character.getNumericValue(spot);
-            }
-            catch (NumberFormatException errorCode) {
-                multiplied = 0;
             }
             result = results + blowup(str.substring(1), multiplied);
         }
